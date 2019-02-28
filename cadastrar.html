@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Receitas Sra. X</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="cabecalho">
+        <div id="banner">
+            <!--figura do baner -->
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Home</a>
+                <li><a href="cadastar.html">Cadastar Receita</a>
+                <li><a href="#">Categorias de Receitas</a>
+                <li><a href="#">Contato</a>
+            </ul>
+        </div>
+        <div id="links-importantes">
+            <p id="redes-sociais">
+                <img src="img/face.png" />
+                <img src="img/ig.png" />
+            </p>
+            <p>
+                <input type="search" name="pesquisa" />
+                <input type="image" name="lupa" alt="Pesquisar" src="img/lupa.png" />
+            </p>
+        </div>
+    </div>
+    <div id="corpo">
+        <h1>Nova Receita</h1>
+        <p>
+            <label for="nome">
+                Nome da Receita:
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome da receita" size="40" />
+            </label>
+        </p>
+        <p>
+            <label for="foto">
+                <input type="file" name="foto" id="foto" />
+            </label>
+        </p>
+        <p>
+            <label for="descricao">
+                <div pullrigth>Descrição da receita:</div>
+                <textarea placeholder="Digite a descrição da receita" id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
+
+            </label>
+        </p>
+            <fieldset>
+                <legend>Novo Ingrediente:</legend>
+        <p>
+            <label for="qtde">
+                Quantidade:
+                <input type="number" name="qtde" min="1" max="1000" />
+
+            </label>
+        </p>
+        <p>
+            <label for="unidade">
+                Unidade de Medida
+                <select>
+                    <option value="cs">colher de sopa</option>
+                    <option value="cc">colher de chá</option>
+                    <option value="x">xícara</option>
+                </select>
+            </label>
+        </p>
+        <p>
+            <label for="descingrediente">
+                Descrição:
+                <input type="text" name="descingrediente" id="descingrediente" size="30" placeholder="Digite o nome do ingrediente" />
+            </label>
+        </p>
+        <button id="btnAdicionar">Adicionar Ingrediente</button>
+        </fieldset>
+        </p>
+        <p>
+            <h5>Ingredientes Adicionados</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Descrição</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tbl-ingrediente">
+                    <tr id="ingrediente">
+                        <td id="qtde-ingrediente"></td>
+                        <td id="desc-ingrediente"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <p>
+            <label for="descricao">
+                <div pullrigth>Descrição da receita:</div>
+                <textarea placeholder="Digite a descrição da receita"  id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
+
+            </label>
+        </p>
+    </div>
+    <div id="rodape">
+        <p>Desenvolvido por Matheus Gregorio Simoni &copy; 2019</p>
+        <p id="redes-sociais">
+            <img src="img/face.png" />
+            <img src="img/ig.png" />
+        </p>
+    </div>
+</body>
+</html>
