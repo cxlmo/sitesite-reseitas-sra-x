@@ -11,8 +11,8 @@
         </div>
         <div id="menu">
             <ul>
-                <li><a href="#">Home</a>
-                <li><a href="cadastar.html">Cadastar Receita</a>
+                <li><a href="index">Home</a>
+                <li><a href="cadastrar.html">Cadastar Receita</a>
                 <li><a href="#">Categorias de Receitas</a>
                 <li><a href="#">Contato</a>
             </ul>
@@ -30,78 +30,141 @@
     </div>
     <div id="corpo">
         <h1>Nova Receita</h1>
-        <p>
-            <label for="nome">
-                Nome da Receita:
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome da receita" size="40" />
-            </label>
-        </p>
-        <p>
-            <label for="foto">
-                <input type="file" name="foto" id="foto" />
-            </label>
-        </p>
-        <p>
-            <label for="descricao">
-                <div pullrigth>Descrição da receita:</div>
-                <textarea placeholder="Digite a descrição da receita" id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
+        <form action="salvar.jsp" method="post">
+            <p>
+                <label for="nome">
+                    Nome da Receita:
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome da receita" size="40" />
+                </label>
+            </p>
+            <p>
+                <label for="foto">
+                    <input type="file" name="foto" id="foto" />
+                </label>
+            </p>
+            <p>
+                <label for="descricao">
+                    <div pullrigth>Descrição da receita:</div>
+                    <textarea placeholder="Digite a descrição da receita" id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
 
-            </label>
-        </p>
+                </label>
+            </p>
             <fieldset>
                 <legend>Novo Ingrediente:</legend>
-        <p>
-            <label for="qtde">
-                Quantidade:
-                <input type="number" name="qtde" min="1" max="1000" />
+                <p>
+                    <label for="qtde">
+                        Quantidade:
+                        <input type="number" name="qtde" min="1" max="1000" />
 
-            </label>
-        </p>
-        <p>
-            <label for="unidade">
-                Unidade de Medida
-                <select>
-                    <option value="cs">colher de sopa</option>
-                    <option value="cc">colher de chá</option>
-                    <option value="x">xícara</option>
+                    </label>
+                </p>
+                <p>
+                    <label for="unidade">
+                        Unidade de Medida
+                        <select>
+                            <option value="cs">colher de sopa</option>
+                            <option value="cc">colher de chá</option>
+                            <option value="x">xícara</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="descingrediente">
+                        Descrição:
+                        <input type="text" name="descingrediente" id="descingrediente" size="30" placeholder="Digite o nome do ingrediente" />
+                    </label>
+                </p>
+                <button id="btnAdicionar">Adicionar Ingrediente</button>
+            </fieldset>
+            </p>
+            <p>
+                <h5>Ingredientes Adicionados</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantidade</th>
+                            <th>Descrição</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-ingrediente">
+                        <tr id="ingrediente">
+                            <td id="qtde-ingrediente"></td>
+                            <td id="desc-ingrediente"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <p>
+                <label for="descricao">
+                    <div pullrigth>Descrição da receita:</div>
+                    <textarea placeholder="Digite a descrição da receita" id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
+
+                </label>
+            </p>
+            <p>
+                Dificuldades:
+                <input id="facil" type="radio" name="dificuldade" value="f" />
+                <label for="facil">Fácil</label>
+                <input id="medio" type="radio" name="dificuldade" value="m" />
+                <label for="medio">Médio</label>
+                <input id="dificil" type="radio" name="dificuldade" value="d" />
+                <label for="dificil">Difícil</label>
+            </p>
+            <p>
+                Tempo de preparo: <input type="number" name="tempo-preparo" min="1" />
+                <select name="unidade-tempo">
+                    <option value="min">minutos</option>
+                    <option value="h">horas</option>
                 </select>
-            </label>
-        </p>
-        <p>
-            <label for="descingrediente">
-                Descrição:
-                <input type="text" name="descingrediente" id="descingrediente" size="30" placeholder="Digite o nome do ingrediente" />
-            </label>
-        </p>
-        <button id="btnAdicionar">Adicionar Ingrediente</button>
-        </fieldset>
-        </p>
-        <p>
-            <h5>Ingredientes Adicionados</h5>
-            <table>
-                <thead>
+            </p>
+            <p>
+                Rendimentos:<input type="number" name="rendimento" min="1" max="100" />
+                porções
+            </p>
+            <p>
+                Acompanhamentos: <br />
+                <table>
                     <tr>
-                        <th>Quantidade</th>
-                        <th>Descrição</th>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="acompanhamentos" value="arroz" />
+                                Arroz
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="acompanhamentos" value="feijao" />
+                                Feijão
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="acompanhamentos" value="fritas" />
+                                Batata Frita
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="acompanhamentos" value="salada" />
+                                Salada
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="acompanhamentos" value="pure" />
+                                Pure de Batata
+                            </label>
+                        </td>
 
                     </tr>
-                </thead>
-                <tbody id="tbl-ingrediente">
-                    <tr id="ingrediente">
-                        <td id="qtde-ingrediente"></td>
-                        <td id="desc-ingrediente"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </p>
-        <p>
-            <label for="descricao">
-                <div pullrigth>Descrição da receita:</div>
-                <textarea placeholder="Digite a descrição da receita"  id="modo-preparo" name="modo-preparo" cols="50" rows="10"></textarea>
-
-            </label>
-        </p>
+                </table>
+            </p>
+            <p>
+                <input type="submit" value="Salvar Receita" />
+            </p>
     </div>
+    </form>
     <div id="rodape">
         <p>Desenvolvido por Matheus Gregorio Simoni &copy; 2019</p>
         <p id="redes-sociais">
